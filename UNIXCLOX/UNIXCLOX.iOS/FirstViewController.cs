@@ -48,8 +48,8 @@ namespace UNIXCLOX.iOS
         private  void SetCurrentTimeLabels(DateTime value)
         {
             InvokeOnMainThread(()=>{
-                CurrentLocalHumanTimeLabel.Text = String.Format("{0}", value.ToLongTimeString());
-                CurrentUTCHumanTimeLabel.Text = String.Format("{0}", value.ToUniversalTime().ToLongTimeString());
+                CurrentLocalHumanTimeLabel.Text = String.Format("{0}", value.ToString("yyyy-MM-dd HH:mm:ss"));
+                CurrentUTCHumanTimeLabel.Text = String.Format("{0}", value.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss"));
                 CurrentUnixTimeLabel.Text = String.Format("{0}", (long)(value.ToUniversalTime() - new DateTime(1970, 1, 1)).TotalSeconds);
             });
         }
